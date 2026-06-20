@@ -58,20 +58,23 @@ To prevent integrator windup and subsequent control saturation oscillations when
 
 The tracking capability of the designed cascaded controller was validated using two distinct operational step trajectories:
 
+
 ### 1. Low-Speed Trajectory ($50\text{ rpm}$)
 * **Characteristics:** Rapid, heavily damped transient response settling precisely at the reference target with negligible steady-state error.
 * **Transient Dynamics:** The control input voltage smoothly ramps up to overcome initial static friction and stabilizes perfectly without major overshoot.
+<img width="514" height="316" alt="image" src="https://github.com/user-attachments/assets/05ed45ef-84bf-44c8-8dee-ad67cf125642" />
 
 ### 2. High-Speed Trajectory with Load Disturbance ($2000\text{ rpm}$)
 * **Characteristics:** The motor rapidly accelerates up to $2000\text{ rpm}$ within a minimal settling time window.
 * **Disturbance Rejection:** After approximately 6 seconds, an external resistive load torque was manually engaged. The system demonstrates excellent robust control authority—recovering back to the $2000\text{ rpm}$ steady-state target promptly after a minor, temporary speed drop.
+<img width="490" height="315" alt="image" src="https://github.com/user-attachments/assets/d0e771db-d6ef-4e97-86dd-603ce51592a3" />
 
 ---
 
 ## 📂 Repository Structure
 
-* **`motor_model.slx`** — The primary Simulink block diagram containing the cascaded controller architecture, saturation blocks, anti-windup subsystems, real-time interface blocks (National Instruments PCIe-6321 auto setup mappings), and filtering blocks for sensor noise suppression.
-* **`motor_parameters.m`** — The initialization MATLAB script containing the identified physical plant parameters ($J, R_A, L_A, K_b$) and computed controller gains ($K_p, T_i$). **Run this file first before opening the Simulink model.**
+* **`DCMotor_controlsim_older.slx`** — The primary Simulink block diagram containing the cascaded controller architecture, saturation blocks, anti-windup subsystems, real-time interface blocks (National Instruments PCIe-6321 auto setup mappings), and filtering blocks for sensor noise suppression.
+* **`Motor_control_script.m`** — The initialization MATLAB script containing the identified physical plant parameters ($J, R_A, L_A, K_b$) and computed controller gains ($K_p, T_i$). **Run this file first before opening the Simulink model.**
 
 ---
 
