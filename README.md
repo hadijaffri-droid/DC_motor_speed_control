@@ -25,6 +25,7 @@ $$J\frac{d\omega(t)}{dt} = \tau_{M}(t) - \tau_{F}(t) - \tau_{L}(t)$$
 $$e_{M}(t) = k_{G}\cdot\omega(t), \quad \tau_{M}(t) = k_{G}\cdot i_{A}(t)$$
 
 Where friction torque $\tau_{F}$ is captured as $\tau_{F} = \tau_{F0}\text{sgn}(\omega) + \alpha_{F}\omega$. Sensor noise is suppressed using low-pass filters with time constants $T_{Fn} = 0.02\text{ s}$ for speed and $T_{Fi} = 0.002\text{ s}$ for current.
+<img width="414" height="124" alt="Cascade_controller_design" src="https://github.com/user-attachments/assets/a641fd0f-8787-4312-ba22-e9d6fac1ddd9" />
 
 ### 2. Inner Loop: Current Controller Design (Modulus Optimum)
 The inner current loop tracks the required armature current ($i_{A\_sp}$) by manipulating the power amplifier voltage input ($u_A$). A PI controller is designated as:
@@ -62,7 +63,6 @@ The tracking capability of the designed cascaded controller was validated using 
 ### 1. Low-Speed Trajectory ($50\text{ rpm}$)
 * **Characteristics:** Rapid, heavily damped transient response settling precisely at the reference target with negligible steady-state error.
 * **Transient Dynamics:** The control input voltage smoothly ramps up to overcome initial static friction and stabilizes perfectly without major overshoot.
-<img width="514" height="316" alt="image" src="https://github.com/user-attachments/assets/05ed45ef-84bf-44c8-8dee-ad67cf125642" />
 
 ### 2. High-Speed Trajectory with Load Disturbance ($2000\text{ rpm}$)
 * **Characteristics:** The motor rapidly accelerates up to $2000\text{ rpm}$ within a minimal settling time window.
